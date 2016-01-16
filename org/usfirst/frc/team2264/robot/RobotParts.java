@@ -1,8 +1,8 @@
 package org.usfirst.frc.team2264.robot;
 
 /**
- * RobotParts is a class of constants that represent the parts on the robot. 
- */                
+ * RobotParts is a class of constants that represent the parts on the robot.
+ */
 public final class RobotParts {
 	public static final class MOTORS {
 		public static final int FRONT_LEFT = 14;

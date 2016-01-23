@@ -35,7 +35,7 @@ public class Claw {
 	 * @param safety Whether safety measures are enabled or not.
 	 */
 	public void setHorizontalDirection(HorizontalDirection direction, boolean safety) {
-		// TODO
+	
 		/* If the safety is on and the limit switch is activated and we're still
 		 * trying to go further in the same direction disable the robot.
 		 * 
@@ -65,7 +65,7 @@ public class Claw {
 		if ((180 < pov) && (pov <= 359)) {
 		this.setHorizontalDirection(HorizontalDirection.OPEN, safety);
 		}
-		else if ((0 < pov) && (pov <= 179)) {
+		else if ((0 <= pov) && (pov <= 179)) {
 		this.setHorizontalDirection(HorizontalDirection.CLOSED, safety);
 		}
 		else {

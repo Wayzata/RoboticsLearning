@@ -27,7 +27,12 @@ public class Robot extends IterativeRobot {
 		this.claw = new Claw(horizontalMotor, verticalMotor, DI);
 		
 		// Initialize the drive train.
-		this.drive = new RobotDrive(RobotParts.MOTORS.FRONT_LEFT, RobotParts.MOTORS.FRONT_RIGHT, RobotParts.MOTORS.REAR_LEFT, RobotParts.MOTORS.REAR_RIGHT);
+		CANTalon frontLeft = new CANTalon(RobotParts.MOTORS.FRONT_LEFT);
+		CANTalon frontRight = new CANTalon(RobotParts.MOTORS.FRONT_RIGHT);
+		CANTalon rearLeft = new CANTalon(RobotParts.MOTORS.REAR_LEFT);
+		CANTalon rearRight = new CANTalon(RobotParts.MOTORS.REAR_RIGHT);
+		
+		this.drive = new RobotDrive (frontLeft, frontRight, rearLeft, rearRight);
 		
 		
 		 
@@ -52,8 +57,9 @@ public class Robot extends IterativeRobot {
 	
 	
 		// Set the drive motors as indicated by the joystick.
-		this.drive.mecanumDrive_Cartesian(RobotParts.AXES.X,RobotParts.AXES.Y,RobotParts.AXES.TWIST,0);
-		
+
+		this.drive.mecanumDrive_Cartesian(this.joystick.getRawAxis(RobotParts.AXES.X),this.joystick.getRawAxis(RobotParts.AXES.Y),this.joystick.getRawAxis(RobotParts.AXES.TWIST),0);
+		//this.drive.mecanumDrive_Cartesian(0, 0, .18, 0);
 		
 
 		// Set the movement for the claw mechanism.

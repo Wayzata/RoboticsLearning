@@ -16,7 +16,7 @@ public final class RobotParts {
 	public static final class AXES {
 		public static final int X = 0;
 		public static final int Y = 1;
-		public static final int TWIST = 2;
+		public static final int TWIST = 3;
 	}
 	public static final int SAFETY_DISABLE_BUTTON = 1;
 	public static final int CLAW_SAFETY_SWITCH = 2;

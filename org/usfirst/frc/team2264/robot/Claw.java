@@ -91,20 +91,20 @@ public class Claw {
 	 * @param pov The POV angle to choose a direction from.
 	 */
 	public void setVerticalDirection(int pov) {
-
-		if ((270 < pov) || (pov <= 89)) {
+	
+		if (((270 < pov) || (pov <= 89)) && (pov >= 0)) {
 			this.setVerticalDirection(VerticalDirection.UP);
 		}
 		else if ((90 < pov) && (pov <= 269)) {
 			this.setVerticalDirection(VerticalDirection.DOWN);
 		}
-		else {
+		else { 
 			this.setVerticalDirection(VerticalDirection.STOP);
 		}
 	}
 	//if the pov is pressed on the top the arm is to move up
 	//if the pov is pressed on the bottom the arm is to move down
-		//otherwise if the pov is not pressed at th certain angles the arm is to stop
+		//otherwise if the pov is not pressed at the certain angles the arm is to stop
 
 	/**
 	 * Direction constants for the horizontal motor.
